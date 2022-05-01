@@ -1,0 +1,49 @@
+.stone {
+    display: block;
+    width: 22%;
+    height: auto;
+}
+
+.avenger {
+    display: block;
+    width: auto;
+    height: 200px;
+}
+
+#stones {
+    margin-left: 50px;
+    width: 25%;
+}
+
+.clickable:hover {
+    cursor: pointer;
+}
+
+#avengers_first {
+    width: 15%;
+}
+
+#avengers_second {
+    width: 15%;
+}
+
+#avengers_third {
+    width: 15%;
+}
+
+#infinity_glove {
+    width: 20%;
+}
+
+.column {
+    float: left;
+}
+
+/*.left, .right {*/
+/*    width: 25%;*/
+/*}*/
+
+/*.middle {*/
+/*    width: 50%;*/
+/*}*/
+
