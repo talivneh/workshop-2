@@ -12,6 +12,7 @@ to check that the match is correct to click on glove.
 If the match is correct we will hide stone. If all matches were being made - we will show him that he won. 
 
 video:
+[![Endgame game](video/cover.png)](https://youtu.be/dAPTikg1uqk "Endgame game")
 
 ### Given:
 Inside project, you have EndGame data. it's data about all matches that you should use to check who found which stone:
@@ -71,9 +72,13 @@ const glove = document.querySelector('.infinity_glove');
 7. Have fun!
 
 ### Requirement:
+- Use correct variable declarations (`let` and `const`)
 - You should use high order function (at least one)
-- You should use map, filter
+- Use object with properties (hint storing match data for example)
+- You should use map, filter on arrays
 - Don't forget about comparison (`===`) and `typeOf`
-
+- Configure your vscode to put `;` on save
+- Use default values for functions
+- Truthy and Falsy Values
 
 ### And don't forget, most important - always go extra mile! :smiley:
