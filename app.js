@@ -19,7 +19,7 @@ const glove = document.querySelector('.infinity_glove');
 let clickedStones;
 const clickedAvengers = []
 
-stones.forEach(stone=>stone.addEventListener('click', ({target}) => {
+stones.forEach(stone => stone.addEventListener('click', ({target}) => {
     onStoneClicked(target);
 }))
 
@@ -28,9 +28,13 @@ avengers.forEach(avenger=>avenger.addEventListener('click', ({target}) => {
 }))
 
 function onStoneClicked(stone){
-    clickedStones = stone;
+    clickedStones = stone.id;
 }
 
 function onAvengerClicked(avenger){
-    clickedAvengers.push(avenger);
+    clickedAvengers.push(avenger.id);
+}
+
+function onGloveClicked(){
+
 }
