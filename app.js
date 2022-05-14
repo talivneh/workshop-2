@@ -16,39 +16,69 @@ const stones = document.querySelectorAll('.stone');
 const avengers = document.querySelectorAll('.avenger');
 const glove = document.querySelector('.infinity_glove');
 
-let clickedStone;
-const clickedAvengers = []
+const matchData ={
+    stone: null,
+    avengers: []
+}
+
+let currentStoneToRemove = null;
 
 stones.forEach(stone => stone.addEventListener('click', ({target}) => {
     onStoneClicked(target);
 }))
 
-avengers.forEach(avenger=>avenger.addEventListener('click', ({target}) => {
+avengers.forEach(avenger=> avenger.addEventListener('click', ({target}) => {
     onAvengerClicked(target);
 }))
 
 function onStoneClicked(stone){
-    clickedStone = stone.id;
+    let color = "blue"
+    const currentStone = document.getElementById(stone.id);
+    matchData.stone = stone.id;
+    currentStone.style.backgroundColor = color;
 }
 
 function onAvengerClicked(avenger){
-    clickedAvengers.push(avenger.id);
+    let color = "blue"
+    matchData.avengers.push(avenger.id);
+    const currentAvenger = document.getElementById(avenger.id);
+    currentAvenger.style.backgroundColor = color;
 }
 
 glove.addEventListener('click', onGloveClicked)
 
 function onGloveClicked(){
 
-   const stoneAvengers = endGameData.find(({name})=> {
-       return name === clickedStone;
+let isCorrect;
+
+   const chosenStone = endGameData.find(({name})=> {
+       return name === matchData.stone;
     })
 
-    console.log(stoneAvengers.avengers)
+    if(matchData.avengers.length != chosenStone.avengers.length){
+        alert("mistake!")
+    }else{
+       if(matchData.avengers.every(avenger => chosenStone.avengers.includes(avenger || avenger.name))){
+           alert("correct!")
+       }
+    }
 
-    stoneAvengers.avengers.every((avenger)=>{
+    endRound(isCorrect)
+}
 
-        clickedAvengers.includes(avenger)
+function endRound(isCorrect = false){
 
+    document.getElementById(matchData.stone).style.backgroundColor= "transparent";
+
+    matchData.avengers.map(avenger=>{
+        document.getElementById(avenger).style.backgroundColor= "transparent";
     })
+
+     if(isCorrecte){
+        document.removeChild(document.getElementById(matchData.stone));
+    }
+
+    matchData.stone = null;
+    matchData.avengers = [];
 
 }
